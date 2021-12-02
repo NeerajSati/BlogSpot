@@ -1,0 +1,13 @@
+.posts{
+    flex:9;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+@media (max-width:619px){
+    .posts{
+        margin-left: 50vw;
+     transform: translateX(-50%);
+    }
+} 

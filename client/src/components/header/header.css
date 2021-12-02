@@ -1,0 +1,40 @@
+.header{
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+}
+.headerImg{
+    height: calc(100vh - 6.0rem);
+    width:100%;
+    -webkit-filter: blur(3px); 
+    filter: blur(3px); 
+    object-fit: fill;
+}
+.headerTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50vh;
+    transform: translateY(-50%);
+}
+.headerTitleBg{
+    font-size: 11rem;
+    color: rgb(255, 255, 255);
+}
+
+.headerTitleSm{
+    font-size: 4rem;
+    color: rgb(240, 216, 216);
+}
+
+@media (max-width:786px){
+    .headerImg{
+        height: calc(60vh - 6.0rem);
+    }
+    .headerTitle{
+        top: 30vh;
+    }
+}

@@ -1,0 +1,71 @@
+.login{
+    height: calc(100vh - 6rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(5, 3, 122, 0.5),rgba(0, 26, 139, 0.5)),url("../../img/Login.jpg");
+    background-size: cover;
+}
+.loginForm {
+    background-color: rgb(226, 227, 238);
+    border: 2px solid black;
+    width: 30rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.loginLabel{
+    padding-bottom: 10px;
+    font-family: 'Krub', sans-serif;
+    font-size: 2.0rem;
+}
+.loginInput{
+    margin-bottom: 30px;
+    width: 250px;
+    font-size: 1.5rem;
+    font-family: 'Questrial', sans-serif;
+    background: none;
+    border: none;
+    border-bottom: 2px dashed gray;
+    text-align: center;
+    padding: 5px;
+}
+.loginInput:focus{
+    outline: none;
+}
+.formSubmit{
+    padding: 10px;
+    width: 90px;
+    color: white;
+    background: rgba(11, 136, 11, 0.774);
+    border: 3px solid rgb(0, 53, 18);
+    border-radius: 20px;
+    cursor: pointer;
+}
+.formSubmit:hover{
+    background: rgba(8, 100, 8, 0.774);
+}
+.formReg{
+    margin-top: 10px;
+    background: rgba(11, 136, 136, 0.877);
+    border: 3px solid rgb(5, 0, 53);
+}
+.formReg:hover{
+    background: rgba(6, 90, 90, 0.877);
+}
+.loginTitle{
+    font-family: 'Secular One','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3.5rem;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+.loginText{
+    font-size: 1.2rem;
+    color: wheat;
+    padding-bottom: 0px;
+    margin-top: 5px;
+}

@@ -1,0 +1,79 @@
+.setting{
+    display: flex;
+}
+.settingWrapper{
+    flex: 9;
+    padding: 20px;
+}
+.settingTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.settingUpdateTitle{
+    color: rgb(0, 68, 26);
+    font-family: 'Secular One', sans-serif;
+    font-size: 2.5rem;
+}
+
+.settingDeleteTitle{
+    font-family: 'Dongle', sans-serif;
+    color: brown;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+.settingPP{
+    display: flex;
+    align-items: center;
+}
+.settingPP > img{
+    width: 15.0rem;
+    height: 15.0rem; 
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.settingPPIcon{
+    font-size: 3.0rem;
+    color: teal;
+    background-color: rgb(206, 241, 241);
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.settingForm{
+    display: flex;
+    flex-direction: column;
+}
+.settingForm > label{
+    font-size: 1.8rem;
+    font-family: 'Questrial', sans-serif;
+    margin-top: 20px;
+}
+.settingForm > input{
+    font-family: 'Krub', sans-serif;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 1px dashed rgb(184, 184, 184);
+    width: 40rem;
+}
+.settingForm > input:focus{
+    outline: none;
+}
+.settingSubmit{
+    width: 12rem;
+    margin-top: 20px;
+    align-self: center;
+    background-color: rgba(0, 128, 68, 0.767);
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+.settingSubmit:hover{
+    color: rgb(214, 246, 237);
+    background-color: rgba(0, 61, 33, 0.767) ;
+}

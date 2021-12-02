@@ -1,0 +1,73 @@
+.post{
+    width: 40rem;
+    background-color: #f3f3f3;
+    margin: 0rem 2.5rem 4rem 2.5rem;
+    border-radius: 1rem;
+}
+.postImg{
+    width:100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 1rem 1rem 0rem 0rem;
+}
+.postInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.postCat{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    color: #04528d;
+    line-height: 2rem;
+    margin-right: 1rem;    
+}
+.postTitle{
+    margin-top: .6rem;
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.postDate{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    color: #04528d;
+    line-height: 1.5rem;
+    margin-right: 1.0rem;
+}
+.postDesc{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    color: rgb(4, 0, 58);
+    line-height: 3.0rem;    
+    margin-top: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 1.0rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+@media (max-width:1237px){
+    .post{
+    width: 35rem;
+    }
+}
+@media (max-width:1109px){
+    .post{
+    width: 30rem;
+    }
+}
+@media (max-width:909px){
+    .post{
+    width: 40rem;
+    }
+}
+@media (max-width:621px){
+    .post{
+    width: 50rem;
+    }
+}

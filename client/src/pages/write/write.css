@@ -1,0 +1,78 @@
+.write{
+    padding-top: 50px;
+}
+.writeImage{
+    width: 70vw;
+    margin-left: 10rem;
+    border-radius: 10px;
+    height: 35rem;
+    object-fit: cover;
+}
+.writeFormGroup{
+    display: flex;
+    align-items: center ;
+    margin-left: 10rem;
+}
+
+.writeIcon{
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 2.5rem;
+    border: 2px solid rgb(0, 100, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    color: rgb(0, 100, 0);
+    cursor: pointer;
+}
+.writeInput{
+    font-family: 'Secular One', sans-serif;
+    font-size: 2.5rem;
+    border: none;
+    padding: 10px;
+    width: 50vw;
+    margin-top: 5px;
+
+}
+.writeInput:focus{
+    outline: 1px solid rgb(195, 195, 195);
+    border-radius: 5px;
+}
+.writeText{
+    font-family: 'Dongle', sans-serif;
+    font-size: 3.0rem;
+    height: 100vh;
+    width: 70vw;
+}
+.writeSubmit{
+    position: absolute;
+    right: 70px;
+    padding: 8px;
+    border-radius: 10px;
+    font-family: 'Secular One', sans-serif;
+    font-size: 1.8rem;
+    border: 2px solid rgb(0, 133, 88);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    background-color: rgb(3, 187, 125);
+}
+@media (max-width:565px){
+    .writeSubmit{
+        position: inherit;
+    }
+}
+@media (max-width:350px){
+    .writeImage{
+        margin-left: 5rem;
+    }
+    .writeFormGroup{
+        margin-left: 5rem;
+    }
+}
+@media (max-width:300px){
+    .writeInput{
+        width: 15rem;
+    }
+}
