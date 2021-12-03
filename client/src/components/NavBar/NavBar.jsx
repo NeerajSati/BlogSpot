@@ -5,6 +5,8 @@ import "./navbar.css";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
 function Navbar() {
+  const origin = "http://localhost:5000/images/";
+
   const {user,dispatch} = useContext(Context);
 
   const handleLogout =() =>{
@@ -106,7 +108,7 @@ function Navbar() {
      }
       <div className="navRight">
         {user ? (
-          <img className="userImg" src={user.profilePic || userimg} alt="user_Image" />
+          <img className="userImg" src={( origin + user.profilePic) || userimg} alt="user_Image" />
         ) : (
           <ul className="navList">
             <li className="navListItem">

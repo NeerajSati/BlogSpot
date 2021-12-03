@@ -41,6 +41,8 @@
 }
 .sidebarListItem{
     display: inline-block;
+    font-size: 1.4rem;
+    font-family: 'Questrial', sans-serif;
     width: 50%;
     margin-top: 15px;
     text-align: center;

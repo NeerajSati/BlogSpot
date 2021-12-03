@@ -7,14 +7,29 @@ export default function Write() {
     const[title,setTitle] = useState("");
     const[desc,setDesc] = useState("");
     const[file,setFile] = useState(null);
+    const[cat,setCat] = useState([]);
     const {user} = useContext(Context);
     const handleSubmit = async (e)=>{
         e.preventDefault();
+        const categories = cat.split(",");
         const newPost = {
             username: user.username,
             title,
             desc,
+            categories
         }
+        categories.map((c)=>{
+            
+        const newCat = {
+            name: c,
+        }
+            try {
+
+            axios.post("/categories/",newCat)
+            } catch (error) {
+                
+            }
+        })
         if(file){
             const data = new FormData();
             console.log(FormData);
@@ -48,6 +63,9 @@ export default function Write() {
                     <input type="file" id="fileInput" style={{display: "none"}} onChange = {(e)=> setFile(e.target.files[0])}/>
                     <input type="text" placeholder="Title" className="writeInput" autoFocus={true} onChange={e=>setTitle(e.target.value)}/>
                     <button className="writeSubmit" type="submit">Publish</button>
+                </div>
+                <div className="writeFormGroup">
+                <input type="text" placeholder="Categories (Separated by ,)" className="writeInput writeCat" onChange={e=>setCat(e.target.value)}/>
                 </div>
                 <div className="writeFormGroup">
                     <textarea placeholder="Enter the blog..."
