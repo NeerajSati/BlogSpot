@@ -3,6 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 2rem;
+    height:fit-content;
 }
 
 @media (max-width:619px){

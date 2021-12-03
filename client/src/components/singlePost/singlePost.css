@@ -31,13 +31,14 @@
 }
 .singlePostDate{
     font-family: 'Krub', sans-serif;
-    
+    font-size: 1.5 rem ;
 }
 .singlePostAuthor{
     font-family: 'Krub', sans-serif;
     margin-right: 5px;
     border-right: 2px solid rgb(190, 190, 190);
     padding: 5px;
+    font-size: 1.8rem ;
 }
 .singlePostEdit{
     float: right;

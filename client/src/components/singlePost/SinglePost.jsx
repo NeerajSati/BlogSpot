@@ -1,11 +1,23 @@
 import './singlePost.css'
-import bgimg from '../../img/dbg.jpg'
+import axios from 'axios'
+import {useEffect, useState} from 'react'
+import { useParams } from 'react-router-dom'
 export default function SinglePost() {
+    let {postid} = useParams();
+    const [post,setPost]= useState({});
+    useEffect(() => {
+        const getPost = async() =>{
+            const res = await axios.get("/posts/"+postid);
+            setPost(res.data);
+        }
+        getPost();
+    })
     return (
         <div className="singlepost" >
         <div className="singlePostWrapper" >
-            <img src={bgimg} alt="PostImage" className="singlePostImage"></img>
-            <h1 className="singlePostTitle">This is Java
+        {post.photo && (<img src={post.photo} alt="PostImage" className="singlePostImage"></img>)}
+            
+            <h1 className="singlePostTitle">{post.title}
             <div className="singlePostEdit">
             <i className="singlePostIcon fa fa-solid fa-pen-nib"></i>
             <i class="singlePostIcon fa fa-solid fa-trash"></i>
@@ -13,29 +25,13 @@ export default function SinglePost() {
             </h1>
             <div className="singlePostInfo">
             <span className="singlePostAuthor">
-            Author: <b>Raja Ravish</b>
+            Author: <b>{post.username}</b>
             </span>
             <span className="singlePostDate">
-            3 days ago</span>
+            {new Date(post.createdAt).toDateString()}</span>
             </div>
             <p className="singlePostDesc">
-            lorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahaj
-            lorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahajlorem ipsum doctr jdhion sjahu hihiji jahaj
-            </p>
+            {post.desc}</p>
         </div>            
         </div>
     )

@@ -1,33 +1,30 @@
-import React from 'react'
+import {Link} from 'react-router-dom'
 import './post.css'
-import postimg from '../../img/user.png'
-function post() {
+function post({post}) {
     return (
         <div className="post">
-            <img className="postImg" src={postimg} alt="PostImage"></img>
+        {post.photo && (
+            <img className="postImg" src={post.photo} alt="PostImage"></img>
+        )}
         <div className="postInfo">
             <div className="postCats">
-                <span className="postCat">HTML</span>
-                <span className="postCat">CSS</span>
+                {post.categories.map((c)=>(
+                    <span className="postCat">{c.name}</span>
+                ))}
             </div>
+            <Link to={`/post/${post._id}`} className="link">
             <span className="postTitle">
-                New React Announcement
+                {post.title}
             </span>
+            </Link>
+            
             <br/>
             <span className="postDate">
-                11 Hour ago
+                {new Date(post.createdAt).toDateString()}
             </span>
         </div>
         <p className="postDesc">
-        loprem iopsum metri metrh heris rfjdhu dnsuf ejuidb afnhuffenf skeunqwfd cbyebfk jnfuf
-        jwufbwfjwf jnfuhfuf fwuhfuhfu ujfwuf ufwufhuh ufwufwfn nwufw ufwufwhf ufwufhwuhf fewuf
-        jfnbdujwfb nfuuf iufwnfuw  heris rfjdhu dnsuf ejuidb afnhuffenf skeunqwfd cbyebfk jnfuf
-        jwufbwfjwf jnfuhfuf fwuhfuhfu ujfwuf ufwufhuh ufwufwfn nwufw ufwufwhf ufwufhwuhf fewuf
-        jfnbdujwfb nfuuf iufwnfuw  heris rfjdhu dnsuf ejuidb afnhuffenf skeunqwfd cbyebfk jnfuf
-        jwufbwfjwf jnfuhfuf fwuhfuhfu ujfwuf ufwufhuh ufwufwfn nwufw ufwufwhf ufwufhwuhf fewuf
-        jfnbdujwfb nfuuf iufwnfuw  heris rfjdhu dnsuf ejuidb afnhuffenf skeunqwfd cbyebfk jnfuf
-        jwufbwfjwf jnfuhfuf fwuhfuhfu ujfwuf ufwufhuh ufwufwfn nwufw ufwufwhf ufwufhwuhf fewuf
-        jfnbdujwfb nfuuf iufwnfuw</p>
+        {post.desc}</p>
         </div>
     )
 }
