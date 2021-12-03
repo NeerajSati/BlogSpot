@@ -1,8 +1,11 @@
 .singlepost{
     flex: 9;
+    width: 55%;
 }
 .singlePostWrapper{
     padding: 30px;
+    display: flex;
+    flex-direction: column;
 }
 .singlePostImage{
     width:100%;
@@ -56,4 +59,39 @@
 
 .singlePostIcon:last-child{
     color: rgb(197, 0, 0);
+}
+
+.singlePostDescInput{
+        font-family: 'Dongle', sans-serif;
+        font-size: 3.0rem;
+        width: 90%;
+        height: 50vh;
+        margin-top: 10px;
+        padding: 10px;
+        border: none;
+        outline:none;
+    }
+.singlePostTitleInput{
+    font-family: 'Secular One', sans-serif;
+    font-size: 2.5rem;
+    border: none;
+    padding: 10px;
+    width: 90%;
+    margin-top: 5px;
+    outline: 1px solid rgb(195, 195, 195);
+    margin-bottom: 8px;
+    text-align: center;
+}
+.singlePostButton{
+    right: 70px;
+    padding: 8px;
+    width: 20rem;
+    border-radius: 10px;
+    font-family: 'Secular One', sans-serif;
+    font-size: 1.8rem;
+    border: 2px solid rgb(0, 133, 88);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    background-color: rgb(3, 187, 125);
+    align-self: center;
 }

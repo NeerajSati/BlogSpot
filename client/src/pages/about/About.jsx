@@ -10,7 +10,7 @@ export default function About() {
         <img src={pic} alt="UserImage"></img>
         <p>
         Hi!, I am Neeraj Sati. I am currently In my third year in GGSIPU, Delhi.
-        I have created this blog website where anyone interest can upload a story/blog with a picture.
+        I have created this blog website where anyone interested can upload a story/blog with a picture.
         </p>
         </div>
         <div className="aboutItem">

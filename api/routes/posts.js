@@ -17,7 +17,7 @@ router.post("/",async(req,res)=>{
 // Update Post
 router.put("/:id",async(req,res)=>{
     try{
-        const post = Post.findById(req.params.id);
+        const post = await Post.findById(req.params.id);
         if(post.username === req.body.username){
         try {
             const updatedPost=await Post.findByIdAndUpdate(req.params.id,{
@@ -41,7 +41,7 @@ router.put("/:id",async(req,res)=>{
 
 router.delete("/:id",async(req,res)=>{
     try{
-        const post = Post.findById(req.params.id);
+        const post = await Post.findById(req.params.id);
         if(post.username === req.body.username){
         try {
             await post.delete();

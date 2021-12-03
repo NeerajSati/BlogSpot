@@ -7,10 +7,12 @@ import Register from "./pages/register/Register";
 import Setting from "./pages/settings/Setting";
 import Single from "./pages/single/Single";
 import About from "./pages/about/About";
+import { useContext } from "react";
+import { Context } from "./context/Context";
 
 function App() {
   
-  const User= true;
+  const {user} = useContext(Context);
   return (
     <>
     <Router>
@@ -18,13 +20,13 @@ function App() {
       <Routes>
       <Route exact path="/" element={<Home />} >
     </Route> 
-      <Route path="/register" element={User ? <Home /> : <Register/> }>
+      <Route path="/register" element={user ? <Home /> : <Register/> }>
       </Route>  
-      <Route path="/login" element={User ? <Home/> : <Login/>}>
+      <Route path="/login" element={user ? <Home/> : <Login/>}>
       </Route>  
-      <Route path="/write" element={User ? <Write/> : <Home/>}>
+      <Route path="/write" element={user ? <Write/> : <Home/>}>
       </Route>  
-      <Route path="/settings" element={User ? <Setting/> : <Home/>}>
+      <Route path="/settings" element={user ? <Setting/> : <Home/>}>
       </Route>  
       <Route path="/post/:postid" element ={<Single/>}>
       </Route>  

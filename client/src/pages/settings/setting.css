@@ -65,7 +65,6 @@
 .settingSubmit{
     width: 12rem;
     margin-top: 20px;
-    align-self: center;
     background-color: rgba(0, 128, 68, 0.767);
     color: whitesmoke;
     padding: 10px;
@@ -76,4 +75,9 @@
 .settingSubmit:hover{
     color: rgb(214, 246, 237);
     background-color: rgba(0, 61, 33, 0.767) ;
+}
+.settingSpan{
+    margin-top: 10px;
+    color: darkgreen;
+    font-size: 20px;
 }

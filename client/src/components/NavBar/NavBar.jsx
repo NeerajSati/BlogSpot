@@ -1,8 +1,16 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import user from "../../img/user.png";
+import userimg from "../../img/user.png";
 import "./navbar.css";
+import { useContext } from "react";
+import { Context } from "../../context/Context";
 function Navbar() {
+  const {user,dispatch} = useContext(Context);
+
+  const handleLogout =() =>{
+      dispatch({type:"LOGOUT"})
+  }
+
   const [shouldOpenNavbar, setShouldOpenNavbar] = useState(false);
   const [isLargeScreen,setIsLargeScreen]=useState(false);
   const [navBar, setnavBar] = useState(false);
@@ -22,29 +30,37 @@ function Navbar() {
             }
         }>
         <ul className="navList">
-          <li className="navListItem">
+          <li className="navListItem" onClick={() => {
+            setShouldOpenNavbar(!shouldOpenNavbar);
+          }}>
             <Link to="." className="link">
               Home
             </Link>
           </li>
-          <li className="navListItem">
+          <li className="navListItem" onClick={() => {
+            setShouldOpenNavbar(!shouldOpenNavbar);
+          }}>
             <Link to="about" className="link">
               About
             </Link>
           </li>
-          <li className="navListItem">
-            <Link to={User ? "write" : "register"} className="link">
+          <li className="navListItem" onClick={() => {
+            setShouldOpenNavbar(!shouldOpenNavbar);
+          }}>
+            <Link to={user ? "write" : "register"} className="link">
               Create
             </Link>
           </li>
-          <li className="navListItem">
-            <Link to={User ? "settings" : "register"} className="link">
+          <li className="navListItem" onClick={() => {
+            setShouldOpenNavbar(!shouldOpenNavbar);
+          }}>
+            <Link to={user ? "settings" : "register"} className="link">
               Settings
             </Link>
           </li>
-          {User? (
-            <li className="navListItem">
-            <Link to="register" className="link">
+          {user? (
+            <li className="navListItem" onClick={handleLogout}>
+            <Link to="login" className="link">
               Logout
             </Link>
             </li>
@@ -69,7 +85,6 @@ function Navbar() {
   };
   window.addEventListener("scroll", updateLogo);
 
-  const User = true;
   return (
     <div className= "Nav">
       <div className="navLeft">
@@ -90,8 +105,8 @@ function Navbar() {
          getNavJSX()
      }
       <div className="navRight">
-        {User ? (
-          <img className="userImg" src={user} alt="User_Image" />
+        {user ? (
+          <img className="userImg" src={user.profilePic || userimg} alt="user_Image" />
         ) : (
           <ul className="navList">
             <li className="navListItem">
