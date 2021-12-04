@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 import './post.css'
 function post({post}) {
-    const origin = "http://localhost:5000/images/";
+    const origin = "https://nodeblogspot.herokuapp.com/images/";
     return (
         <div className="post">
         

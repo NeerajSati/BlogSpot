@@ -1,18 +1,18 @@
 import './setting.css'
 import img from '../../img/user.png'
-import axios from 'axios'
+import {axiosInstance} from '../../config';
 import Sidebar from '../../components/sidebar/Sidebar'
 import {Context} from '../../context/Context'
 import {useContext,useState} from 'react'
 export default function Setting() {
-    const origin = "http://localhost:5000/images/";
+    const origin = "https://nodeblogspot.herokuapp.com/images/";
 
     const[file,setFile] = useState(null);
     const[success,setSuccess] = useState(false);
     const {user,dispatch} = useContext(Context);
     const handleDelete = async()=>{
         try {
-            await axios.delete(`/users/${user._id}`,{data: {userId:user._id}})
+            await axiosInstance.delete(`/users/${user._id}`,{data: {userId:user._id}})
             dispatch({type:"LOGOUT"})
             window.location.replace("/")
         } catch (error) {
@@ -33,12 +33,12 @@ export default function Setting() {
             data.append("file",file)
             updatedUser.profilePic = filename;
             try {
-                await axios.post("/upload",data)
+                await axiosInstance.post("/upload",data)
             } catch (error) {
                 dispatch({type:"UPDATE_FAILURE"})
             }
             try{
-            const res = await axios.put("/users/"+user._id,updatedUser);
+            const res = await axiosInstance.put("/users/"+user._id,updatedUser);
             setSuccess(true);
             dispatch({type:"UPDATE_SUCCESS",payload:res.data})
             }catch(err){

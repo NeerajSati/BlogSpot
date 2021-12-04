@@ -5,7 +5,7 @@ import "./navbar.css";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
 function Navbar() {
-  const origin = "http://localhost:5000/images/";
+  const origin = "https://nodeblogspot.herokuapp.com//images/";
 
   const {user,dispatch} = useContext(Context);
 
@@ -100,7 +100,7 @@ function Navbar() {
       </Link>
         <p className={navBar ? "logoText logoTextHide" : "logoText"}>
           {" "}
-          Node Blogger
+          Node BlogSpot
         </p>
       </div>
      {

@@ -6,7 +6,7 @@ import {Context} from '../../context/Context'
 
 export default function SinglePost() {
     const {user} = useContext(Context);
-    const origin = "http://localhost:5000/images/";
+    const origin = "https://nodeblogspot.herokuapp.com/images/";
     let {postid} = useParams();
     const [post,setPost]= useState({});
     const [title,setTitle]= useState("");
