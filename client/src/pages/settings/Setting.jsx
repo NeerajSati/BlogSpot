@@ -57,7 +57,7 @@ export default function Setting() {
             <form className="settingForm"  onSubmit={handleSubmit}>
             <label>Profile Picture</label>
             <div className="settingPP">
-                <img src={(file ? URL.createObjectURL(file) : (origin + user.profilePic)) || img} alt="ProfileImage"/>
+                <img src={(file ? URL.createObjectURL(file) : (origin + user.profilePic))} onError={(e)=>{e.target.onerror = null; e.target.src={img}}} alt="ProfileImage"/>
                 <label htmlFor="fileInput"><i className=" settingPPIcon fa far fa-user-circle"></i></label>
                 <input type="file" id="fileInput" style={{display: 'none'}} onChange={(e)=> setFile(e.target.files[0])} ></input>
             </div>

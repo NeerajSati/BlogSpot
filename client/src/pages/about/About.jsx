@@ -1,7 +1,18 @@
 import './about.css'
 import pic from '../../img/Aboutme.jpg'
+import { useEffect,useState } from 'react';
+import {axiosInstance} from '../../config';
+import { Link } from 'react-router-dom';
 
 export default function About() {
+    const [cats,setCats] = useState([]);
+    useEffect(()=>{
+        const getCats = async()=>{
+            const res = await axiosInstance.get('/categories')
+            setCats(res.data);
+        }
+        getCats();
+    },[])
     return (
         <div className="about">
         <div className="aboutItem">
@@ -16,12 +27,12 @@ export default function About() {
         <div className="aboutItem">
         <span className="aboutTitle">Languages I know</span>
         <ul className="aboutList">
-        <li className="aboutListItem">JavaScript</li>
-        <li className="aboutListItem">C++</li>
-        <li className="aboutListItem">HTML</li>
-        <li className="aboutListItem">CSS</li>
-        <li className="aboutListItem">Node</li>
-        <li className="aboutListItem">React JS</li>
+        {cats.map((c)=>(
+            <Link className="link" to={`/?cat=${c.name}`}>
+            <li className="sidebarListItem">{c.name}</li>
+            </Link>
+            
+        ))}
         </ul>       
         </div> 
         <div className="aboutItem">

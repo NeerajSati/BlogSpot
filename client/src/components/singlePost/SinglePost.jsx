@@ -10,7 +10,6 @@ export default function SinglePost() {
     let {postid} = useParams();
     const [post,setPost]= useState({});
     const [title,setTitle]= useState("");
-    const [categories,setCategories]= useState([]);
     const [desc,setDesc]= useState("");
     const [updateMode,setUpdateMode]= useState(false);
     useEffect(() => {
@@ -19,7 +18,6 @@ export default function SinglePost() {
             setPost(res.data);
             setTitle(res.data.title);
             setDesc(res.data.desc);
-            setCategories(res.data.categories);
         }
         getPost();
     },[postid])
@@ -59,10 +57,6 @@ export default function SinglePost() {
             </span>
             <span className="singlePostDate">
             {new Date(post.createdAt).toDateString()}</span>
-            {categories.map((c)=>(
-                <Link to={`/?cat=${c}`} className="link"><span className="singlePostCat">{c} | </span></Link>
-            ))}
-
 
             </div>
             {updateMode ? <textarea className="singlePostDescInput" value={desc} onChange={(e)=>setDesc(e.target.value)}/> :

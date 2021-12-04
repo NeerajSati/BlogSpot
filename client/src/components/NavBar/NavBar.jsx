@@ -5,7 +5,7 @@ import "./navbar.css";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
 function Navbar() {
-  const origin = "https://nodeblogspot.herokuapp.com//images/";
+  const origin = "https://nodeblogspot.herokuapp.com/images/";
 
   const {user,dispatch} = useContext(Context);
 
@@ -108,7 +108,7 @@ function Navbar() {
      }
       <div className="navRight">
         {user ? (
-          <img className="userImg" src={( origin + user.profilePic) || userimg} alt="user_Image" />
+          <img className="userImg" src={( origin + user.profilePic)} onError={(e)=>{e.target.onerror = null; e.target.src={userimg}}} alt="user_Image" />
         ) : (
           <ul className="navList">
             <li className="navListItem">

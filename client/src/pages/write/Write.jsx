@@ -24,7 +24,6 @@ export default function Write() {
             name: c,
         }
             try {
-
             axiosInstance.post("/categories/",newCat)
             } catch (error) {
                 
