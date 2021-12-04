@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import userimg from "../../img/user.png";
 import "./navbar.css";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
@@ -108,7 +107,7 @@ function Navbar() {
      }
       <div className="navRight">
         {user ? (
-          <img className="userImg" src={( origin + user.profilePic)} onError={(e)=>{e.target.onerror = null; e.target.src={userimg}}} alt="user_Image" />
+          <img className="userImg" src={( origin + user.profilePic)} alt="user_Image" />
         ) : (
           <ul className="navList">
             <li className="navListItem">
