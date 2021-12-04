@@ -8,7 +8,7 @@ export default function Setting() {
 
     const[file,setFile] = useState(null);
     const[success,setSuccess] = useState(false);
-    const {user,dispatch} = useContext(Context);
+    const {user,dispatch,isFetching} = useContext(Context);
     const handleDelete = async()=>{
         try {
             await axiosInstance.delete(`/users/${user._id}`,{data: {userId:user._id}})
@@ -56,11 +56,11 @@ export default function Setting() {
             <form className="settingForm"  onSubmit={handleSubmit}>
             <label>Profile Picture</label>
             <div className="settingPP">
-                <img src={(file ? URL.createObjectURL(file) : (origin + user.profilePic))} onError={(e)=>{e.target.onerror = null; e.target.src="https://images.pexels.com/photos/4588031/pexels-photo-4588031.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}} alt="ProfileImage"/>
+                <img src={(file ? URL.createObjectURL(file) : (origin + user.profilePic))} onError={(e)=>{e.target.onerror = null; e.target.src="https://static.wikia.nocookie.net/peppapedia/images/0/05/Doge.png/revision/latest/scale-to-width-down/350?cb=20210323171135"}} alt="ProfileImage"/>
                 <label htmlFor="fileInput"><i className=" settingPPIcon fa far fa-user-circle"></i></label>
                 <input type="file" id="fileInput" style={{display: 'none'}} onChange={(e)=> setFile(e.target.files[0])} ></input>
             </div>
-            <button className="settingSubmit" type="submit">Submit</button>
+            <button className="settingSubmit" type="submit" disabled={isFetching}>Submit</button>
             
             {success && <span className="settingSpan">Profile Pic Updated Successfully!</span>}
             </form>

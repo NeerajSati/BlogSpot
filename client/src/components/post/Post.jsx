@@ -2,11 +2,12 @@ import {Link} from 'react-router-dom'
 import './post.css'
 function post({post}) {
     const origin = "https://nodeblogspot.herokuapp.com/images/";
+    const random = Math.floor((Math.random() * 99) + 10);
     return (
         <div className="post">
         
         {post.photo && (
-            <img className="postImg" src={origin + post.photo} onError={(e)=>{e.target.onerror = null; e.target.src="https://picsum.photos/2500/1667"}} alt="PostImage"></img>
+            <img className="postImg" src={origin + post.photo} onError={(e)=>{e.target.onerror = null; e.target.src=`https://picsum.photos/2500/16${random}`}} alt="PostImage"></img>
         )}
         <div className="postInfo">
             <div className="postCats">
