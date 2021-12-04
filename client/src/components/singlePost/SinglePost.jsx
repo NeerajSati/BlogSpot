@@ -1,5 +1,5 @@
 import './singlePost.css'
-import axios from 'axios'
+import {axiosInstance} from '../../config';
 import {useContext, useEffect, useState} from 'react'
 import { useParams,Link } from 'react-router-dom'
 import {Context} from '../../context/Context'
@@ -14,7 +14,7 @@ export default function SinglePost() {
     const [updateMode,setUpdateMode]= useState(false);
     useEffect(() => {
         const getPost = async() =>{
-            const res = await axios.get("/posts/"+postid);
+            const res = await axiosInstance.get("/posts/"+postid);
             setPost(res.data);
             setTitle(res.data.title);
             setDesc(res.data.desc);
@@ -23,7 +23,7 @@ export default function SinglePost() {
     },[postid])
     const handleDelete = async()=>{
         try {
-            await axios.delete(`/posts/${post._id}`,{data: {username:user.username}})
+            await axiosInstance.delete(`/posts/${post._id}`,{data: {username:user.username}})
             window.location.replace("/")
         } catch (error) {
             
@@ -31,7 +31,7 @@ export default function SinglePost() {
     }
     const handleUpdate = async()=>{
         try {
-            await axios.put(`/posts/${post._id}`,{username:user.username, title, desc})
+            await axiosInstance.put(`/posts/${post._id}`,{username:user.username, title, desc})
             setUpdateMode(false);
         } catch (error) {
             
@@ -40,7 +40,7 @@ export default function SinglePost() {
     return (
         <div className="singlepost" >
         <div className="singlePostWrapper" >
-        {post.photo && (<img src={origin + post.photo} alt="PostImage" className="singlePostImage"></img>)}
+        {post.photo && (<img src={origin + post.photo} onError={(e)=>{e.target.onerror = null; e.target.src="https://picsum.photos/2500/1667"}} alt="PostImage" className="singlePostImage"></img>)}
             {updateMode? <input type="text" autoFocus className="singlePostTitleInput" value={title} onChange={(e)=>setTitle(e.target.value)}/> 
                         :    <h1 className="singlePostTitle">{title}
                 {post.username === user?.username && 

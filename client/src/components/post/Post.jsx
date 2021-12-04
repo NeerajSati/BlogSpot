@@ -6,7 +6,7 @@ function post({post}) {
         <div className="post">
         
         {post.photo && (
-            <img className="postImg" src={origin + post.photo} alt="PostImage"></img>
+            <img className="postImg" src={origin + post.photo} onError={(e)=>{e.target.onerror = null; e.target.src="https://picsum.photos/2500/1667"}} alt="PostImage"></img>
         )}
         <div className="postInfo">
             <div className="postCats">
