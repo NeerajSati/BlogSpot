@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect ,useRef } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import { useContext } from "react";
@@ -22,6 +22,18 @@ function Navbar() {
         setIsLargeScreen(true);
     }
   };
+  const ref = useRef();
+  useEffect(() => {
+    const checkOutside = e =>{
+      if(shouldOpenNavbar && ref.current && !ref.current.contains(e.target)){
+        setShouldOpenNavbar(false);
+      }
+    }
+    document.addEventListener("mousedown", checkOutside);
+    return () => {
+      document.removeEventListener("mousedown", checkOutside);
+    };
+  }, [shouldOpenNavbar]);
   const getNavJSX=()=>{
       return (
         <div className="navCenter" style={
@@ -87,7 +99,7 @@ function Navbar() {
   window.addEventListener("scroll", updateLogo);
 
   return (
-    <div className= "Nav">
+    <div className= "Nav"  ref={ref}>
       <div className="navLeft">
       <Link to="." className="link">
         <i className={
