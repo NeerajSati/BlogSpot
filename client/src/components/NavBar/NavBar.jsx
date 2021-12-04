@@ -107,7 +107,7 @@ function Navbar() {
      }
       <div className="navRight">
         {user ? (
-          <img className="userImg" src={( origin + user.profilePic)} onError={(e)=>{e.target.onerror = null; e.target.src="https://static.wikia.nocookie.net/peppapedia/images/0/05/Doge.png/revision/latest/scale-to-width-down/350?cb=20210323171135"}} alt="user_Image" />
+          <img className="userImg" src={( origin + user.profilePic)} onError={(e)=>{e.target.onerror = null; e.target.src="https://i.pinimg.com/600x315/4b/74/cf/4b74cfb5f9ba362728b5ebfa6920b0f5.jpg"}} alt="user_Image" />
         ) : (
           <ul className="navList">
             <li className="navListItem">
