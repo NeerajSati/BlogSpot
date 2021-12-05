@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 import './post.css'
 function post({post}) {
     const origin = "https://nodeblogspot.herokuapp.com/images/";
-    const random = Math.floor((Math.random() * 99) + 10);
+    const random = Math.floor((Math.random() * 25) + 10);
     return (
         <div className="post">
         
