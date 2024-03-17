@@ -1,14 +1,15 @@
-.posts{
-    flex:9;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-    height:fit-content;
+.posts {
+  flex: 9;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  height: fit-content;
 }
 
-@media (max-width:619px){
-    .posts{
-        margin-left: 50vw;
-     transform: translateX(-50%);
-    }
-} 
+@media (max-width: 619px) {
+  .posts {
+    margin: auto;
+    /* margin-left: 50vw; */
+    /* transform: translateX(-50%); */
+  }
+}

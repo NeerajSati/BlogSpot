@@ -1,71 +1,77 @@
-.sidebar{
-    flex:3;
-    padding:2rem;
-    border-radius: 1.0rem;
-    margin-top: 1.0rem;
+.sidebar {
+  flex: 3;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 75rem;
+}
+.sidebarItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebarTitle {
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 1rem;
+  padding: 0.5rem;
+  width: 80%;
+  text-align: center;
+  font-size: 2.2rem;
+  border-top: 2px solid rgb(153, 153, 153);
+  border-bottom: 2px solid rgb(153, 153, 153);
+}
+.sidebarItem > i {
+  margin: 1rem;
+  font-size: 19rem;
+  color: rgb(0, 66, 128);
+}
+.sidebarItem > p {
+  font-size: 1.7rem;
+  font-family: "Questrial", sans-serif;
+  line-height: 2.3rem;
+  padding: 1rem;
+}
+.sidebarList {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.sidebarListItem {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-family: "Questrial", sans-serif;
+  width: 50%;
+  margin-top: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+.sidebarSocial {
+  display: flex;
+  width: 250px;
+  align-items: center;
+  justify-content: center;
+}
+.sidebarIcon {
+  margin: 5px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.sidebarIconAnc {
+  text-decoration: none;
+  color: inherit;
+}
+@media (max-width: 621px) {
+  .home {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    height: 75rem;
-}
-.sidebarItem{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.sidebarTitle{
-    font-family: 'Roboto Condensed', sans-serif;
-    margin: 1.0rem;
-    padding: 0.5rem;
-    width: 80%;
-    text-align: center;
-    font-size: 2.2rem;
-    border-top: 2px solid rgb(153,153,153);
-    border-bottom: 2px solid rgb(153, 153, 153);
-
-}
-.sidebarItem > i{
-    margin: 1.0rem;
-    font-size: 19.0rem;
-    color: rgb(0, 66, 128);
-}
-.sidebarItem > p{
-    font-size: 1.7rem;
-    font-family: 'Questrial', sans-serif;
-    line-height: 2.3rem;
-    padding: 1.0rem;
-}
-.sidebarList{
-    list-style: none;
-    margin-bottom: 20px;
-}
-.sidebarListItem{
-    display: inline-block;
-    font-size: 1.4rem;
-    font-family: 'Questrial', sans-serif;
-    width: 50%;
-    margin-top: 15px;
-    text-align: center;
-    cursor: pointer;
-}
-.sidebarSocial{
-    display: flex;
-    width: 250px;
-    align-items: center;
-    justify-content: center;
-}
-.sidebarIcon{
-    margin: 5px;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.sidebarIconAnc{
-    text-decoration: none;
-    color: inherit;
-}
-@media (max-width:621px){
-    .sidebar{
-        display: none;
-    }
+  }
+  .post {
+    flex: none;
+    margin: 0 3rem;
+    margin-top: 3rem;
+    width: calc(100% - 6rem);
+  }
 }
