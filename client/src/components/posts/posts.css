@@ -9,6 +9,7 @@
 @media (max-width: 619px) {
   .posts {
     margin: auto;
+    width: 100%;
     /* margin-left: 50vw; */
     /* transform: translateX(-50%); */
   }
