@@ -1,4 +1,11 @@
-.single{
+.single {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 619px) {
+  .single {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+  }
 }

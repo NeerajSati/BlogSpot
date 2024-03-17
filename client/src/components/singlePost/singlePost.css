@@ -1,114 +1,121 @@
-.singlepost{
-    flex: 9;
-    width: 55%;
+.singlepost {
+  flex: 9;
+  width: 55%;
 }
-.singlePostWrapper{
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
+.singlePostWrapper {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
 }
-.singlePostImage{
-    width:100%;
-    height: 30rem;
-    border-radius: 5px;
-}
-
-.singlePostTitle{
-    font-family: 'Secular One', sans-serif;
-    text-align: center;
-    font-size: 2.5rem;
-}
-.singlePostDesc{
-    margin-top: 10px;
-    font-family: 'Dongle', Arial, Helvetica, sans-serif;
-    font-size: 3.0rem;
-    color: rgba(23, 2, 93, 0.767);
-}
-.singlePostDesc:first-letter{
-    color: rgb(47, 0, 255);
-    font-size: 5.0rem ;
-    margin-left: 10px;
-}
-.singlePostInfo{
-    color: rgb(151, 93, 22);
-}
-.singlePostDate{
-    font-family: 'Krub', sans-serif;
-    font-size: 2rem ;
-    padding: 5px;
-    margin-right: 5px;
-    border-right: 2px solid rgb(190, 190, 190);
-}
-.singlePostCat{
-    font-family: 'Krub', sans-serif;
-    font-size: 2rem ;
-    color: rgb(0, 80, 53);
-}
-.singlePostAuthor{
-    font-family: 'Krub', sans-serif;
-    margin-right: 5px;
-    border-right: 2px solid rgb(190, 190, 190);
-    padding: 5px;
-    font-size: 1.8rem ;
-}
-.singlePostEdit{
-    float: right;
-    font-size: 2.5rem;
-    color: rgb(0, 0, 78);
+.singlePostImage {
+  width: 100%;
+  height: 30rem;
+  border-radius: 5px;
 }
 
-.singlePostIcon{
-    margin-left: 10px;
-    cursor: pointer;
+.singlePostTitle {
+  font-family: "Secular One", sans-serif;
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 1rem 0;
 }
-.singlePostIcon:first-child{
-    color: rgb(0, 177, 0);
+.singlePostDesc {
+  margin-top: 10px;
+  font-family: "Dongle", Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  color: rgba(23, 2, 93, 0.767);
+}
+.singlePostDesc:first-letter {
+  color: rgb(47, 0, 255);
+  font-size: 5rem;
+  margin-left: 10px;
+}
+.singlePostInfo {
+  color: rgb(151, 93, 22);
+}
+.singlePostDate {
+  font-family: "Krub", sans-serif;
+  font-size: 2rem;
+  padding: 5px;
+  margin-right: 5px;
+  border-right: 2px solid rgb(190, 190, 190);
+}
+.singlePostCat {
+  font-family: "Krub", sans-serif;
+  font-size: 2rem;
+  color: rgb(0, 80, 53);
+}
+.singlePostAuthor {
+  font-family: "Krub", sans-serif;
+  margin-right: 5px;
+  border-right: 2px solid rgb(190, 190, 190);
+  padding: 5px;
+  font-size: 1.8rem;
+}
+.singlePostEdit {
+  float: right;
+  font-size: 2.5rem;
+  color: rgb(0, 0, 78);
 }
 
-.singlePostIcon:last-child{
-    color: rgb(197, 0, 0);
+.singlePostIcon {
+  margin-left: 10px;
+  cursor: pointer;
+}
+.singlePostIcon:first-child {
+  color: rgb(0, 177, 0);
 }
 
-.singlePostDescInput{
-        font-family: 'Dongle', sans-serif;
-        font-size: 3.0rem;
-        width: 90%;
-        height: 50vh;
-        margin-top: 10px;
-        padding: 10px;
-        border: none;
-        outline:none;
-    }
-.singlePostTitleInput{
-    font-family: 'Secular One', sans-serif;
-    font-size: 2.5rem;
-    border: none;
-    padding: 10px;
-    width: 90%;
-    margin-top: 5px;
-    outline: 1px solid rgb(195, 195, 195);
-    margin-bottom: 8px;
-    text-align: center;
+.singlePostIcon:last-child {
+  color: rgb(197, 0, 0);
 }
-.singlePostCatInput{
-    font-family: 'Krub', sans-serif;
-    font-size: 2rem ;
-    color: rgb(0, 80, 53);
-    border: none;
-    outline: 1px solid rgb(195, 195, 195);
-    margin-bottom: 8px;
-    text-align: center;
+
+.singlePostDescInput {
+  font-family: "Dongle", sans-serif;
+  font-size: 3rem;
+  width: 90%;
+  height: 50vh;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  outline: none;
 }
-.singlePostButton{
-    right: 70px;
-    padding: 8px;
-    width: 20rem;
-    border-radius: 10px;
-    font-family: 'Secular One', sans-serif;
-    font-size: 1.8rem;
-    border: 2px solid rgb(0, 133, 88);
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    background-color: rgb(3, 187, 125);
-    align-self: center;
+.singlePostTitleInput {
+  font-family: "Secular One", sans-serif;
+  font-size: 2.5rem;
+  border: none;
+  padding: 10px;
+  width: 90%;
+  margin-top: 5px;
+  outline: 1px solid rgb(195, 195, 195);
+  margin-bottom: 8px;
+  text-align: center;
+}
+.singlePostCatInput {
+  font-family: "Krub", sans-serif;
+  font-size: 2rem;
+  color: rgb(0, 80, 53);
+  border: none;
+  outline: 1px solid rgb(195, 195, 195);
+  margin-bottom: 8px;
+  text-align: center;
+}
+.singlePostButton {
+  right: 70px;
+  padding: 8px;
+  width: 20rem;
+  border-radius: 10px;
+  font-family: "Secular One", sans-serif;
+  font-size: 1.8rem;
+  border: 2px solid rgb(0, 133, 88);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  background-color: rgb(3, 187, 125);
+  align-self: center;
+}
+
+@media (max-width: 619px) {
+  .singlepost {
+    width: 100%;
+  }
 }
